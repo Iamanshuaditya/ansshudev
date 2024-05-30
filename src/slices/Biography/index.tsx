@@ -5,7 +5,6 @@ import Heading from "@/components/Heading";
 import { Content, ImageFieldImage } from "@prismicio/client";
 
 import { SliceComponentProps } from "@prismicio/react";
-import { Experience } from "../ContentIndex/ContentList";
 
 /**
  * Props for `Biography`.
