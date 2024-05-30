@@ -6,8 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const homepage = await client.getSingle("homepage");
   const pages = await client.getAllByType("page");
   const blogPosts = await client.getAllByType("blog_post");
-  const projects = await client.getAllByType("project");
-
+ 
   const siteRoot = "https://demo.com";
 
   const homepageRoute = {
@@ -25,10 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: post.last_publication_date,
   }));
 
-  const projectsRoutes = projects.map((project) => ({
-    url: siteRoot + "/project/" + project.uid,
-    lastModified: project.last_publication_date,
-  }));
+   
 
-  return [homepageRoute, ...pagesRoutes, ...blogPostsRoutes, ...projectsRoutes];
+  return [homepageRoute, ...pagesRoutes, ...blogPostsRoutes,  ];
 }

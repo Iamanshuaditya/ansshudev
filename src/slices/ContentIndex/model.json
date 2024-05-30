@@ -25,8 +25,8 @@
             "label": "Content Type",
             "placeholder": "",
             "options": [
-              "Blogs",
-              "Projects"
+              "Blogs"
+             
             ],
             "default_value": "Blogs"
           }
