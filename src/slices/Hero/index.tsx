@@ -14,7 +14,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 /**
  * Component for "Hero" Slices.
  */
-const Hero = ({ slice }: HeroProps): JSX.Element => {
+const Hero = ({}): JSX.Element => {
   const component = useRef(null);
 
   useEffect(() => {
@@ -56,11 +56,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
   }, []);
 
   return (
-    <Bounded
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      ref={component}
-    >
+    <Bounded ref={component}>
       <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
         <Shapes />
         <div className="col-start-1 md:row-start-1 " data-speed=".2">

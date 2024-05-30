@@ -4,17 +4,7 @@ import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import { Content, ImageFieldImage } from "@prismicio/client";
 
-import { SliceComponentProps } from "@prismicio/react";
-
-/**
- * Props for `Biography`.
- */
-export type BiographyProps = SliceComponentProps<Content.BiographySlice>;
-
-/**
- * Component for "Biography" Slices.
- */
-const Biography = ({ slice }: BiographyProps): JSX.Element => {
+const Biography = ({}): JSX.Element => {
   const image: ImageFieldImage = {
     url: "https://avatars.githubusercontent.com/u/87059568?s=400&u=5947b19055e80fe6623b46ee637a429d167dcccf&v=4",
     alt: "Anshu Aditya",
@@ -33,10 +23,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
   };
 
   return (
-    <Bounded
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
+    <Bounded>
       <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr]">
         <Heading size="xl" className="col-start-1">
           Anshu Aditya
@@ -48,7 +35,7 @@ const Biography = ({ slice }: BiographyProps): JSX.Element => {
           asperiores perferendis modi assumenda voluptas inventore dolorum
           recusandae numquam beatae.
         </div>
-        <Button linkField={"/"} label={slice.primary.button_text} />
+        <Button linkField={"/"} label={"Resume"} />
 
         <Avatar
           image={image}
