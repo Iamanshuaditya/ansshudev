@@ -33,7 +33,7 @@ export default function ContentList({
   const [hovering, setHovering] = useState(false);
   const lastMousePos = useRef({ x: 0, y: 0 });
 
-  const urlPrefix = contentType === "Blogs" ? "/blog" : "/project";
+  const urlPrefix = contentType === "Blogs" ? "/blog" : "/Blogs";
 
   useEffect(() => {
     let ctx = gsap.context(() => {
