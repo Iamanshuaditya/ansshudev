@@ -29,11 +29,30 @@ const Biography = ({}): JSX.Element => {
           Anshu Aditya
         </Heading>
 
-        <div className="prose prose-xl prose-slate prose-invert col-start-1">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio aperiam
-          quisquam magni, vel cum omnis sed tempora nemo. Eligendi quos
-          asperiores perferendis modi assumenda voluptas inventore dolorum
-          recusandae numquam beatae.
+        <div className=" prose prose-xl prose-slate prose-invert col-start-1 grid opacity-80">
+          <span>
+            {" "}
+            Oh, hello there 👋{" "}
+            <div>
+              👨‍🎓 I’m <span className="font-bold opacity-100">Anshu Aditya</span>
+              , a 18 year-old high school student.{" "}
+            </div>
+            <div>
+              ⚒️ I mainly work with{" "}
+              <span className="font-bold opacity-100">Nextjs,Typescript</span>{" "}
+              and <span className="font-bold opacity-100">solidity</span> on a
+              daily basis.{" "}
+            </div>
+            🏡 Currently living in the{" "}
+            <span className="font-bold opacity-100">Jhakhand</span> in India.
+          </span>
+          <br />
+          <div>
+            {/* Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus,
+            hic iusto magni culpa exercitationem aperiam explicabo modi vel
+            soluta maxime. Labore, accusantium quae? Nam laborum, reprehenderit
+            consequatur est voluptatum magnam? */}
+          </div>
         </div>
         <Button linkField={"/"} label={"Resume"} />
 

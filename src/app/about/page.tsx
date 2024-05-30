@@ -26,10 +26,6 @@ function About() {
         tech_name: "GSAP",
         tech_color: "#0AE448",
       },
-      {
-        tech_name: "Prisma",
-        tech_color: "#1C2232",
-      },
     ],
   };
 

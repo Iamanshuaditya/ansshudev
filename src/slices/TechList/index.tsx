@@ -31,24 +31,12 @@ const experienceSliceData: Content.ExperienceSlice[] = [
     items: [
       {
         title: "React Developer",
-        time_period: "2023-24",
+        time_period: "2023-24(January - March)",
         institution: "Chat360",
         description: [
           {
             type: "paragraph",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            spans: [],
-          },
-        ],
-      },
-      {
-        title: "React Developer",
-        time_period: "2023-24",
-        institution: "Chat360",
-        description: [
-          {
-            type: "paragraph",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            text: "During my internship at Chat360, I had the exciting opportunity to contribute to the development of their UI landing page using React. It was an enriching experience where I applied my skills in design and front-end development to create a user-friendly and visually appealing interface",
             spans: [],
           },
         ],
@@ -72,7 +60,7 @@ const experienceSliceData: Content.ExperienceSlice[] = [
         description: [
           {
             type: "paragraph",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            text: "",
             spans: [],
           },
         ],

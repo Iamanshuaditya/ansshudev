@@ -34,6 +34,11 @@ const Biography = ({}): JSX.Element => {
           quisquam magni, vel cum omnis sed tempora nemo. Eligendi quos
           asperiores perferendis modi assumenda voluptas inventore dolorum
           recusandae numquam beatae.
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+          explicabo praesentium voluptas unde, at quo beatae amet quae, incidunt
+          impedit ipsam consequuntur iste! Iste eveniet necessitatibus tempore
+          corrupti alias pariatur?
         </div>
         <Button linkField={"/"} label={"Resume"} />
 
