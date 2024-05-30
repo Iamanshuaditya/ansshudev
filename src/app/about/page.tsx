@@ -32,7 +32,12 @@ function About() {
   return (
     <div>
       <Biography />
-      <TechList slice={mockTechListSlice} />
+      <TechList
+        slice={mockTechListSlice}
+        index={0}
+        slices={[]}
+        context={undefined}
+      />
     </div>
   );
 }
