@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
+import { PrismicRichText } from "@prismicio/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,15 +18,74 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export type TechListProps = SliceComponentProps<Content.TechListSlice>;
 
-/**
- * Component for "TechList" Slices.
- */
+const experienceSliceData: Content.ExperienceSlice[] = [
+  {
+    slice_type: "experience",
+    slice_label: null,
+    id: "experience-id-1",
+    variation: "default",
+    version: "v1",
+    primary: {
+      heading: "Experience",
+    },
+    items: [
+      {
+        title: "React Developer",
+        time_period: "2023-24",
+        institution: "Chat360",
+        description: [
+          {
+            type: "paragraph",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            spans: [],
+          },
+        ],
+      },
+      {
+        title: "React Developer",
+        time_period: "2023-24",
+        institution: "Chat360",
+        description: [
+          {
+            type: "paragraph",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            spans: [],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slice_type: "experience",
+    slice_label: null,
+    id: "education-id-1",
+    variation: "default",
+    version: "v1",
+    primary: {
+      heading: "Education",
+    },
+    items: [
+      {
+        title: "High School",
+        time_period: "2024-25",
+        institution: "DAV public School Hazaribagh",
+        description: [
+          {
+            type: "paragraph",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            spans: [],
+          },
+        ],
+      },
+    ],
+  },
+];
+
 const TechList = ({ slice }: TechListProps): JSX.Element => {
   const component = useRef(null);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // create as many GSAP animations and/or ScrollTriggers here as you want...
       const tl = gsap.timeline({
         scrollTrigger: {
           pin: true, // pin the trigger element while active
@@ -95,8 +155,48 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           ))}
         </div>
       ))}
+      {experienceSliceData.map((experienceSlice, index) => (
+        <Experience
+          key={index}
+          slice={experienceSlice}
+          index={index}
+          slices={[]}
+          context={undefined}
+        />
+      ))}
     </section>
   );
 };
 
 export default TechList;
+
+export type ExperienceProps = SliceComponentProps<Content.ExperienceSlice>;
+
+export const Experience = ({ slice }: ExperienceProps): JSX.Element => {
+  return (
+    <Bounded
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+    >
+      <Heading as="h2" size="lg">
+        {slice.primary.heading}
+      </Heading>
+      {slice.items.map((item, index) => (
+        <div key={index} className="ml-6 mt-8 max-w-prose md:ml-12 md:mt-16">
+          <Heading as="h3" size="sm">
+            {item.title}
+          </Heading>
+
+          <div className="mt-1 flex w-fit items-center gap-1 text-2xl font-semibold tracking-tight text-slate-400">
+            <span>{item.time_period}</span>{" "}
+            <span className="text-3xl font-extralight">/</span>{" "}
+            <span>{item.institution}</span>
+          </div>
+          <div className="prose prose-lg prose-invert mt-4">
+            <PrismicRichText field={item.description} />
+          </div>
+        </div>
+      ))}
+    </Bounded>
+  );
+};
