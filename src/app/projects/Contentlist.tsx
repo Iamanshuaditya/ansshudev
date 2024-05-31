@@ -83,22 +83,26 @@ export default function ContentList() {
 
   const items = [
     {
-      title: "Lul",
+      title: "Lul-(Platform for online courses)",
+      teach: "Nextjs/Stripe/Prisma/Gsap/Typesript",
       link: "https://lul-phi.vercel.app",
       githubLink: "https://github.com/Iamanshuaditya/lul",
     },
     {
-      title: "Autowise",
+      title: "Autowise-(Saas Landing page for automated tool)",
+      teach: "Nexjs/Aceternity",
       link: "https://autowise.vercel.app/",
       githubLink: "https://github.com/Iamanshuaditya/Autowise",
     },
     {
-      title: "QID Web",
+      title: "QID Web-(Landing page of a startup )",
+      teach: "Nnextjs/Gsap",
       link: " https://qid-web.vercel.app/",
       githubLink: "https://github.com/Iamanshuaditya/qid-web",
     },
     {
-      title: "Copod UI",
+      title: "Copod UI-{Sleep landing page for Podcasts}",
+      teach: "Nextjs/Framer/Gsap/Scss",
       link: "https://copod-ui.vercel.app/",
       githubLink: "https://github.com/Iamanshuaditya/copod-ui",
     },
@@ -116,7 +120,7 @@ export default function ContentList() {
               <div className="flex flex-col">
                 <span className="text-3xl font-bold">{item.title}</span>
                 <div className="flex gap-3 text-yellow-400">
-                  <span className="text-lg font-bold">Next.js</span>
+                  <span className="text-lg font-bold">{item.teach}</span>
                 </div>
               </div>
               <span className="ml-auto flex items-center gap-6 text-xl font-medium md:ml-0">

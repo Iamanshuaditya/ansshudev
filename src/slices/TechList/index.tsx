@@ -31,7 +31,7 @@ const experienceSliceData: Content.ExperienceSlice[] = [
     items: [
       {
         title: "React Developer",
-        time_period: "2023-24(January - March)",
+        time_period: "2024(January - March)",
         institution: "Chat360",
         description: [
           {

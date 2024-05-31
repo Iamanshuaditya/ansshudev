@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Shapes } from "@/slices/Hero/Shapes";
 import Bounded from "@/components/Bounded";
 import gsap from "gsap";
+import { KeyTextField } from "@prismicio/client";
 
 const Page = ({}): JSX.Element => {
   const component = useRef(null);
@@ -44,15 +45,29 @@ const Page = ({}): JSX.Element => {
     }, component);
     return () => ctx.revert(); // cleanup!
   }, []);
-
+  const renderLetters = (name: KeyTextField, key: string) => {
+    if (!name) return;
+    return name.split("").map((letter, index) => (
+      <span
+        key={index}
+        className={`name-animation name-animation-${key}-index inline-block opacity-0 `}
+      >
+        {letter}
+      </span>
+    ));
+  };
   return (
     <Bounded ref={component}>
       <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
         <Shapes />
         <div className="col-start-1 md:row-start-1 " data-speed=".2">
           <h1 className="mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold leading-none tracking-tighter">
-            <span className="block text-slate-300 ">Anshu</span>
-            <span className="-mt-[.2em] block text-slate-500  ">Aditya</span>
+            <span className="block text-slate-300 ">
+              {renderLetters("Anshu", "First")}
+            </span>
+            <span className="-mt-[.2em] block text-slate-500  ">
+              {renderLetters("Aditya", "First")}
+            </span>
           </h1>
           <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
             Full stack dev

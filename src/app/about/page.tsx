@@ -11,7 +11,7 @@ function About() {
     variation: "default",
     version: "v1",
     primary: {
-      title: "Tech List",
+      title: "What i use",
     },
     items: [
       {
