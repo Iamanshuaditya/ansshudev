@@ -101,7 +101,7 @@ export default function ContentList() {
       githubLink: "https://github.com/Iamanshuaditya/qid-web",
     },
     {
-      title: "Copod UI-{Sleep landing page for Podcasts}",
+      title: "Copod UI-{Landing page for Podcasts}",
       teach: "Nextjs/Framer/Gsap/Scss",
       link: "https://copod-ui.vercel.app/",
       githubLink: "https://github.com/Iamanshuaditya/copod-ui",
