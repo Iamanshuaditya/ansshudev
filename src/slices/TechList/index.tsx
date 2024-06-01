@@ -10,6 +10,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
 import { PrismicRichText } from "@prismicio/react";
+import { InfiniteMovingCards } from "@/components/infinite-moving-cards";
+import VideoEmbed from "./VideoPlayer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,30 +39,6 @@ const experienceSliceData: Content.ExperienceSlice[] = [
           {
             type: "paragraph",
             text: "During my internship at Chat360, I had the exciting opportunity to contribute to the development of their UI landing page using React. It was an enriching experience where I applied my skills in design and front-end development to create a user-friendly and visually appealing interface",
-            spans: [],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    slice_type: "experience",
-    slice_label: null,
-    id: "education-id-1",
-    variation: "default",
-    version: "v1",
-    primary: {
-      heading: "Education",
-    },
-    items: [
-      {
-        title: "High School",
-        time_period: "2024-25",
-        institution: "DAV public School Hazaribagh",
-        description: [
-          {
-            type: "paragraph",
-            text: "",
             spans: [],
           },
         ],
@@ -152,6 +130,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
           context={undefined}
         />
       ))}
+      <Achivements />
     </section>
   );
 };
@@ -186,5 +165,32 @@ export const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         </div>
       ))}
     </Bounded>
+  );
+};
+
+const Achivements = (): JSX.Element => {
+  const items = Array.from({ length: 2 }, (_, index) => ({
+    href: `/${index + 1}.png`,
+  }));
+
+  return (
+    <>
+      <Bounded>
+        <Heading as="h2" size="lg">
+          Achievements
+        </Heading>
+      </Bounded>
+      <InfiniteMovingCards
+        items={items}
+        direction="right"
+        speed="fast"
+        className="mt-6"
+      />
+      <div className="m-12 flex justify-center">
+        <div className="w-full max-w-lg">
+          <VideoEmbed />
+        </div>
+      </div>
+    </>
   );
 };

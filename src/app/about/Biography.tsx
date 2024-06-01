@@ -39,14 +39,12 @@ const Biography = ({}): JSX.Element => {
             </div>
             <div>
               ⚒️ I mainly work with{" "}
-              <span className="font-bold opacity-100">
-                Nextjs,Typescript,Threejs
-              </span>{" "}
-              and <span className="font-bold opacity-100">solidity</span> on a
+              <span className="font-bold opacity-100">Nextjs,Typescript,</span>{" "}
+              and <span className="font-bold opacity-100">Threejs</span> on a
               daily basis.{" "}
             </div>
             🏡 Currently living in the{" "}
-            <span className="font-bold opacity-100">Jhakhand</span> in India.
+            <span className="font-bold opacity-100">Jhakhand</span> India.
           </span>
           <br />
           <div>
