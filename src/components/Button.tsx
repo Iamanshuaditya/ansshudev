@@ -1,4 +1,3 @@
-import { PrismicNextLink } from "@prismicio/next";
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
 import clsx from "clsx";
@@ -10,12 +9,13 @@ type ButtonProps = {
   label: KeyTextField;
   showIcon?: boolean;
   className?: string;
+  onClick?: () => void;
 };
 
 function resolveLink(linkField: LinkField | string | undefined): string {
   if (typeof linkField === "string") {
     return linkField;
-  } else if (linkField && linkField) {
+  } else if (linkField && linkField.link_type) {
     return linkField.link_type;
   }
   return "#";
@@ -26,12 +26,14 @@ export default function Button({
   label,
   showIcon = true,
   className,
+  onClick,
 }: ButtonProps) {
   const resolvedLink = resolveLink(linkField);
 
   return (
     <Link
       href={resolvedLink}
+      onClick={onClick}
       className={clsx(
         "group relative flex w-fit items-center justify-center overflow-hidden rounded-md border-2 border-slate-900 bg-slate-50 px-4 py-2 font-bold transition-transform ease-out hover:scale-105",
         className,

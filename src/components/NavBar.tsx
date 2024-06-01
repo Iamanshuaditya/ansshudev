@@ -1,8 +1,6 @@
 "use client";
-
 import clsx from "clsx";
 import React, { useState } from "react";
-import { Content, KeyTextField, asLink } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import { MdMenu, MdClose } from "react-icons/md";
@@ -15,7 +13,7 @@ export const navItems = [
   { link: "/blog", label: "Blog" },
 ];
 
-export default function NavBar({}) {
+export default function NavBar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -80,10 +78,15 @@ export default function NavBar({}) {
             </React.Fragment>
           ))}
           <li>
-            <Button label="Contact Us" className="ml-3" linkField={"/about"} />
+            <Button
+              label="Contact Us"
+              className="ml-3"
+              linkField={"/about"}
+              onClick={() => setOpen(false)}
+            />
           </li>
         </div>
-        <DesktopMenu pathname={pathname} />
+        <DesktopMenu pathname={pathname} setOpen={setOpen} />
       </ul>
     </nav>
   );
@@ -101,7 +104,13 @@ function NameLogo({ name }: { name: string }) {
   );
 }
 
-function DesktopMenu({ pathname }: { pathname: string }) {
+function DesktopMenu({
+  pathname,
+  setOpen,
+}: {
+  pathname: string;
+  setOpen: (open: boolean) => void;
+}) {
   return (
     <div className="relative z-50 hidden flex-row items-center gap-1 bg-transparent py-0 md:flex">
       {navItems.map(({ link, label }, index) => (
@@ -134,7 +143,12 @@ function DesktopMenu({ pathname }: { pathname: string }) {
         </React.Fragment>
       ))}
       <li>
-        <Button label="Contact Us" className="ml-3" linkField={"/about"} />
+        <Button
+          label="Contact Us"
+          className="ml-3"
+          linkField={"/about"}
+          onClick={() => setOpen(false)}
+        />
       </li>
     </div>
   );
