@@ -20,20 +20,6 @@ export default function Blog({ params }: { params: { slug: string } }) {
   );
 }
 
-export function formatDate(dateStr: DateField): string {
-  if (!dateStr) return "";
-  const date = new Date(dateStr);
-
-  const options: Intl.DateTimeFormatOptions = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-
-  return new Intl.DateTimeFormat("en-US", options).format(date);
-}
-
 function ContentBody({
   page,
 }: {
