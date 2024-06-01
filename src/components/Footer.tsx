@@ -5,7 +5,22 @@ import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 import Bounded from "@/components/Bounded";
 import { navItems } from "./NavBar";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { isFilled } from "@prismicio/client";
 
+const settings = {
+  data: {
+    name: "Anshu Aditya",
+    github_link: {
+      link_type: "Web",
+      url: "https://github.com/Iamanshuaditya",
+    },
+    twitter_link: {
+      link_type: "Web",
+      url: "https://x.com/AnshuAd14312398",
+    },
+  },
+};
 export default function Footer() {
   return (
     <Bounded as="footer" className="text-slate-600">
@@ -50,6 +65,26 @@ export default function Footer() {
             ))}
           </ul>
         </nav>
+        <div className="socials inline-flex justify-center sm:justify-end">
+          {isFilled.link(settings.data.github_link) && (
+            <PrismicNextLink
+              field={settings.data.github_link}
+              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+              aria-label={settings.data.name + " on GitHub"}
+            >
+              <FaGithub />
+            </PrismicNextLink>
+          )}
+          {isFilled.link(settings.data.twitter_link) && (
+            <PrismicNextLink
+              field={settings.data.twitter_link}
+              className="p-2 text-2xl text-slate-300 transition-all duration-150 hover:scale-125 hover:text-yellow-400"
+              aria-label={settings.data.name + " on Twitter"}
+            >
+              <FaTwitter />
+            </PrismicNextLink>
+          )}
+        </div>
       </div>
     </Bounded>
   );

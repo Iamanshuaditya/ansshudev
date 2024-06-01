@@ -80,7 +80,7 @@ export default function NavBar({}) {
             </React.Fragment>
           ))}
           <li>
-            <Button label="Contact Us" className="ml-3" />
+            <Button label="Contact Us" className="ml-3" linkField={"/about"} />
           </li>
         </div>
         <DesktopMenu pathname={pathname} />
@@ -134,7 +134,7 @@ function DesktopMenu({ pathname }: { pathname: string }) {
         </React.Fragment>
       ))}
       <li>
-        <Button label="Contact Us" className="ml-3" />
+        <Button label="Contact Us" className="ml-3" linkField={"/about"} />
       </li>
     </div>
   );
