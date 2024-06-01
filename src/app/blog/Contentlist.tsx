@@ -1,9 +1,9 @@
+// pages/page.tsx
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { FaArrowAltCircleUp, FaGithub, FaLink } from "react-icons/fa";
-import { useRouter } from "next/navigation";
 import { MoveUpRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,26 +85,30 @@ export default function ContentList() {
   const items = [
     {
       title: "Mastering JavaScript Animations",
-      link: " https://qid-web.vercel.app/",
+      link: "mastering-javascript-animations",
       sub: "Js Animation",
       githubLink: "https://github.com/Iamanshuaditya/qid-web",
     },
     {
       title: "Innovative CSS Techniques for Modern Web Design",
+      link: "innovative-css-techniques",
       sub: "Css",
-      link: "https://copod-ui.vercel.app/",
       githubLink: "https://github.com/Iamanshuaditya/copod-ui",
     },
   ];
+
+  const handleItemClick = (link: string) => {
+    router.push(`/blog/${link}`);
+  };
 
   return (
     <>
       <ul ref={component} className="relative grid border-b border-b-slate-100">
         {items.map((item, index) => (
           <li key={index} className="list-item">
-            <a
-              href="#"
-              className="flex flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 md:flex-row"
+            <div
+              className="flex cursor-pointer flex-col justify-between border-t border-t-slate-100 py-10 text-slate-200 md:flex-row"
+              onClick={() => handleItemClick(item.link)}
             >
               <div className="flex flex-col">
                 <span className="text-3xl font-bold">{item.title}</span>
@@ -113,9 +117,9 @@ export default function ContentList() {
                 </div>
               </div>
               <span className="ml-auto flex items-center gap-6 text-xl font-medium md:ml-0">
-                Read more <MoveUpRight onClick={() => window.open()} />
+                Read more <MoveUpRight />
               </span>
-            </a>
+            </div>
           </li>
         ))}
       </ul>
