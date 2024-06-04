@@ -79,7 +79,7 @@ export default function NavBar() {
           ))}
           <li>
             <Button
-              label="Contact Us"
+              label="Contact "
               className="ml-3"
               linkField={"/about"}
               onClick={() => setOpen(false)}
@@ -144,7 +144,7 @@ function DesktopMenu({
       ))}
       <li>
         <Button
-          label="Contact Us"
+          label="Contact"
           className="ml-3"
           linkField={"/about"}
           onClick={() => setOpen(false)}
